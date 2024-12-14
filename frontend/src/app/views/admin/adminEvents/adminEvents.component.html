@@ -1,0 +1,63 @@
+<!-- <div class="flex flex-wrap"> -->
+  <!-- <div class="w-full px-4"> -->
+    
+    <div
+      class="relative flex flex-col min-w-0 break-words bg-white w-full  shadow-lg rounded"
+    >
+
+    <div class="flex flex-col md:flex-row gap-2 ">
+      <!-- Sidebar -->
+      <div class="w-48 md:w-1/4 bg-blue-50 rounded-lg shadow-md p-4">
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800">Instructions</h2>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Select dates to create a new event</li>
+            <li>Click an event to delete or edit it</li>
+          </ul>
+        </div>
+    
+        <div class="mb-6">
+          <label class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              [checked]="calendarOptions().weekends"
+              (change)="handleWeekendsToggle()"
+              class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring focus:ring-blue-200"
+            />
+            <span class="text-gray-800">Toggle weekends</span>
+          </label>
+        </div>
+    
+        <div>
+          <h2 class="text-xl font-semibold text-gray-800">All Events ({{filteredEvents.length}})</h2>
+          <ul class="mt-4 space-y-2">
+            <li
+              *ngFor="let event of filteredEvents"
+              class="text-gray-700 text-sm"
+            >
+              <b class="text-gray-900">{{ event.start | date: 'MMM d, h:mm a' }}</b>
+              <i>{{ event.title }}</i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Main Content -->
+      <div class="w-full md:w-3/4 bg-white rounded-lg shadow-md p-4">
+        <full-calendar [options]="calendarOptions()">
+          <ng-template #eventContent let-arg>
+            <div class="flex items-center space-x-2">
+              <b class="text-blue-600">{{ arg.timeText }}</b>
+              <i class="text-gray-700">
+                {{ arg.event.title + ' ' + arg.event.extendedProps['lieu'] }}
+              </i>
+            </div>
+          </ng-template>
+        </full-calendar>
+        
+      </div>
+    </div> 
+    </div>
+    
+  <!-- </div> -->
+<!-- </div> -->

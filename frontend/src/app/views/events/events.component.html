@@ -1,0 +1,21 @@
+<app-index-navbar></app-index-navbar>
+<section class="header relative pt-24 px-4 items-center ">
+  <div class="justify-center text-center flex flex-wrap mt-12">
+    <div class="w-full md:w-6/12 px-12 md:px-4">
+      <h2 class="font-semibold text-4xl">Explore Our Events</h2>
+    </div>
+  </div>
+  
+  <div class="relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+    <div class="relative px-12   overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
+  <full-calendar class="pt-12" [options]='calendarOptions()'>
+    <ng-template #eventContent let-arg>
+      <div>
+        <b>{{ arg.timeText }}</b>
+        <i>{{ arg.event.title + " " + arg.event.extendedProps["lieu"] }}</i>
+      </div>
+    </ng-template>
+  </full-calendar>
+    </div>
+  </div>
+  </section>
