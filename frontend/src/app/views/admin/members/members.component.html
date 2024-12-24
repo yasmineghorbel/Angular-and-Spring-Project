@@ -1,8 +1,10 @@
 <div class="flex flex-wrap mt-4">
   <div class="w-full mb-12 px-4">
-    <app-card-table type="Professor"></app-card-table>
+    <app-card-table (edit)="handleEdit($event,'Professor')" (add)="addNew('Professor')"
+    (delete)="handleDelete($event)" [items]="professors" type="Professor"></app-card-table>
   </div>
   <div class="w-full mb-12 px-4">
-    <app-card-table type="Student" ></app-card-table>
+    <app-card-table (edit)="handleEdit($event,'Student')" (add)="addNew('Student')"
+    (delete)="handleDelete($event)" [items]="students" type="Student" ></app-card-table>
   </div>
 </div>

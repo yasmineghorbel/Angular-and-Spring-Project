@@ -67,6 +67,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
 import { PubsComponent } from "./views/admin/pubs/pubs.component";
 import { ToolsComponent } from "./views/admin/tools/tools.component";
+import { ToolModalComponent } from './components/tool-modal/tool-modal.component';
+import { PubModalComponent } from './components/pub-modal/pub-modal.component';
+import { MemberModalComponent } from './components/member-modal/member-modal.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +111,7 @@ import { ToolsComponent } from "./views/admin/tools/tools.component";
     AdminEventsComponent,
     PublicationsComponent,
     ModalComponent,
-    MembersComponent,PubsComponent,ToolsComponent
+    MembersComponent,PubsComponent,ToolsComponent, ToolModalComponent, PubModalComponent, MemberModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,
     ReactiveFormsModule,MatFormFieldModule

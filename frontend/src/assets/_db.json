@@ -1,28 +1,84 @@
 {
   "members": [
     {
-      "cin": "122",
-      "name": "yasmine edit",
-      "cv": "lien",
-      "type": "student",
-      "createdDate": "2024-10-16T10:43:08.518Z",
-      "id": "22"
+      "id": "1",
+      "cin": "23456789",
+      "name": "John Doe",
+      "cv": "https://example.com/cv/john-doe.pdf",
+      "type": "Professor",
+      "birthDate": "2023-12-01",
+      "pic": "assets/img/team-1-800x800.jpg",
+      "email": "johndoe@example.com",
+      "dateInscription": "",
+      "diploma": "",
+      "grade": "Professor",
+      "establishment": "University of Science"
     },
     {
-      "cin": "15",
+      "id": "2",
+      "cin": "12345678",
+      "name": "Jane Smith",
+      "cv": "https://example.com/cv/jane-smith.pdf",
+      "type": "Student",
+      "birthDate": "2024-01-15",
+      "pic": "assets/img/team-2-800x800.jpg",
+      "email": "janesmith@example.com",
+      "dateInscription": "2023-09-10",
+      "diploma": "Bachelor in Computer Science",
+      "grade": "",
+      "establishment": ""
+    },
+    {
+      "id": "3",
+      "cin": "C13579246",
+      "name": "Alice Brown",
+      "cv": "https://example.com/cv/alice-brown.pdf",
+      "type": "Professor",
+      "birthDate": "2024-02-20",
+      "pic": "assets/img/team-4-470x470.png",
+      "email": "alicebrown@example.com",
+      "grade": "Associate Professor",
+      "establishment": "Institute of Technology"
+    },
+    {
+      "id": "4",
+      "cin": "D24681357",
+      "name": "Bob Johnson",
+      "cv": "https://example.com/cv/bob-johnson.pdf",
+      "type": "Student",
+      "birthDate": "2023-11-05",
+      "pic": "assets/img/team-3-800x800.jpg",
+      "email": "bobjohnson@example.com",
+      "dateInscription": "2022-08-15",
+      "diploma": "Master in Data Science"
+    },
+    {
+      "id": "5",
+      "cin": "11154641",
       "name": "houssem dammak",
-      "cv": "aaa",
-      "type": "teacher",
-      "createdDate": "2024-10-16T10:43:27.137Z",
-      "id": "ed32"
+      "cv": "Yasmine_Ghorbel_cv_eng.pdf",
+      "type": "Student",
+      "birthDate": "2024-12-20T23:00:00.000Z",
+      "pic": "HABOUBI.jpg",
+      "email": "houssemdammak2001@gmail.com",
+      "dateInscription": "2024-12-23T23:00:00.000Z",
+      "diploma": "genie informatique",
+      "grade": "",
+      "establishment": ""
     },
     {
-      "cin": null,
+      "id": "5",
+      "cin": "55555987",
       "name": "yasmine  ghorbel",
-      "cv": "hh",
-      "type": "student",
-      "createdDate": "2024-10-16T10:43:54.081Z",
-      "id": "45fd"
+      "cv": "Yasmine_Ghorbel_cv.pdf",
+      "type": "Professor",
+      "birthDate": "2024-12-17T23:00:00.000Z",
+      "pic": "455352468_794046779470171_7038853056777770457_n.jpg",
+      "email": "yasmineghorbel29@gmail.com",
+      "dateInscription": "",
+      "diploma": "",
+      "grade": "Professor",
+      "establishment": "Enis"
     }
   ],
   "event": [
@@ -60,6 +116,97 @@
       "dateDebut": "2024-11-15T23:00:00.000Z",
       "dateFin": "2024-11-15T23:00:00.000Z",
       "lieu": "sfax"
+    }
+  ],
+  "tools": [
+    {
+      "id": "1",
+      "source": "Tool A",
+      "date": "2024-12-01",
+      "member": "yasmine"
+    },
+    {
+      "id": "2",
+      "source": "Tool B ",
+      "date": "2024-12-10",
+      "member": "yasmine"
+    },
+    {
+      "id": "3",
+      "source": "Tool C",
+      "date": "2024-12-15",
+      "member": "yasmine"
+    },
+    {
+      "id": "4",
+      "source": "Tool D",
+      "date": "2024-12-20",
+      "member": "yasmine"
+    },
+    {
+      "id": "5",
+      "source": "new tool emna",
+      "date": "2024-12-21T23:00:00.000Z",
+      "member": ""
+    },
+    {
+      "id": "6",
+      "source": "new houssem",
+      "date": "2024-12-26T23:00:00.000Z",
+      "member": ""
+    },
+    {
+      "id": "6",
+      "source": "new tool",
+      "date": "2024-12-25T23:00:00.000Z",
+      "member": ""
+    }
+  ],
+  "pubs": [
+    {
+      "id": "1",
+      "title": "Publication 1",
+      "type": "Research",
+      "date": "2024-12-20",
+      "member": {
+        "id": "1",
+        "cin": "23456789",
+        "name": "John Doe",
+        "cv": "https://example.com/cv/john-doe.pdf",
+        "type": "Professor",
+        "birthDate": "2023-12-01",
+        "pic": "assets/img/team-1-800x800.jpg",
+        "email": "johndoe@example.com",
+        "dateInscription": "",
+        "diploma": "",
+        "grade": "Professor",
+        "establishment": "University of Science"
+      },
+      "pdf": "path/to/pdf1.pdf"
+    },
+    {
+      "id": "2",
+      "title": "Publication 2",
+      "type": "Article",
+      "date": "2024-12-19",
+      "member": "Jane Smith",
+      "pdf": "path/to/pdf2.pdf"
+    },
+    {
+      "id": "3",
+      "title": "Publication 3",
+      "type": "Conference Paper",
+      "date": "2024-12-18",
+      "member": "Alice Johnson",
+      "pdf": "path/to/pdf3.pdf"
+    },
+    {
+      "id": "4",
+      "title": "Publication 4",
+      "type": "Thesis",
+      "date": "2024-12-17",
+      "member": "Bob Brown",
+      "pdf": "path/to/pdf4.pdf"
     }
   ]
 }

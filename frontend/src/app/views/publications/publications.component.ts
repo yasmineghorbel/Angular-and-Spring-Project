@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PubService } from 'src/Services/pub.service';
 
 @Component({
   selector: 'app-publications',
   templateUrl: './publications.component.html',
 })
-export class PublicationsComponent {
+export class PublicationsComponent implements OnInit {
   cards = [
     {
       auteur:"houssem Dammak",
@@ -73,4 +74,13 @@ export class PublicationsComponent {
       bgColor: 'bg-red-600',
     },
   ];
+  pubs:any=[]
+    constructor(private pubService:PubService) {}
+  ngOnInit(): void {
+    this.pubService.getAllPubs().subscribe((data)=>{
+      this.pubs=data
+      console.log(this.pubs)
+    })
+  }
+  
 }

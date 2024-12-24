@@ -1,20 +1,16 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
+import { Member } from "src/Models/Member";
 
 @Component({
   selector: "app-card-table",
   templateUrl: "./card-table.component.html",
 })
 export class CardTableComponent implements OnInit {
-open() {
-throw new Error('Method not implemented.');
-}
-  @Input()
-  get color(): string {
-    return this._color;
-  }
-  set color(color: string) {
-    this._color = color !== "light" && color !== "dark" ? "light" : color;
-  }
+  typeMember="" ;
+  constructor() {}
+
+  ngOnInit(): void {}
+  @Input() items: Member[] = [];
   @Input()
   get type():string{
     return this.typeMember 
@@ -22,9 +18,26 @@ throw new Error('Method not implemented.');
   set type(type: string) {
     this.typeMember = type;
   }
-  private _color = "light";
-  typeMember="" ;
-  constructor() {}
+  @Output() edit = new EventEmitter<Member>();  // Sortie pour l'édition
+  @Output() delete = new EventEmitter<Member>(); // Sortie pour la suppression
+  @Output() add = new EventEmitter<String>();
+  // Exemple d'un membre
+  members: Member[] = [];
 
-  ngOnInit(): void {}
+  onEdit(eventData: any,member: Member) {
+    this.edit.emit(member);  
+  }
+
+  onDelete(eventData: any,member: Member) {
+    this.delete.emit(member); 
+  }
+  addNew() {
+    this.add.emit();  
+  }
+  // private _color = "light";
+  
+  
+    open() {
+    throw new Error('Method not implemented.');
+    }
 }

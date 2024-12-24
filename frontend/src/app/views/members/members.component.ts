@@ -1,10 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Member } from 'src/Models/Member';
+import { MemberService } from 'src/Services/member.service';
 
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
 })
-export class MembersComponent {
+export class MembersComponent implements OnInit {
+  members:Member[]=[]
   isOpen=false
   @Input()
   get color(): string {
@@ -15,9 +18,13 @@ export class MembersComponent {
   }
   private _color = "light";
 
-  constructor() {}
+  constructor(private memberService:MemberService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.memberService.getAllMembers().subscribe((members)=>{
+      this.members=members
+    })
+  }
   open(){
     this.isOpen=!this.isOpen
   }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Member } from 'src/Models/Memeber';
+import { Member } from 'src/Models/Member';
 // decorateur permet au service d'etre injecter ou utiliser par des autre services et composante 
 @Injectable({
   providedIn: 'root' //etre disponible pour tout les composant du route 

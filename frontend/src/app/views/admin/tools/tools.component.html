@@ -7,7 +7,7 @@
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
               <h3
                 class="font-semibold text-lg ">
-                Publications
+                Tools
               </h3>
 
             </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="block w-full overflow-x-auto">
           <!-- Projects table -->
-          <table class="items-center w-full bg-transparent border-collapse">
+          <table class="items-center w-full bg-transparent border-collapse" >
             <thead>
               <tr>
                 <th
@@ -54,50 +54,48 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let tool of tools">
                 <th
-                  class="border-t-0  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+                  class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                 >
-                  
-                  <span
-                    class="ml-3 font-bold text-blueGray-600"
-                  >
-                    Argon 
+                  <span class="ml-3 font-bold text-blueGray-600">
+                    {{ tool.id }}
                   </span>
                 </th>
-                
+            
                 <td
                   class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                 >
-                  <i class="fas fa-circle text-orange-500 mr-2"></i> pending
+                  {{ tool.source }}
                 </td>
-                
+            
                 <td
                   class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                 >
-                  <div class="flex">
-                    
-                  </div>
+                  {{ tool.date | date:'yyyy-MM-dd'  }}
                 </td>
                 <td
                   class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                 >
-                View
-                <button (click)="open()"> <i class="fa-solid fa-arrow-up-right-from-square "></i></button>
+                {{ tool.member }}
+                  View
+                  <button (click)="open()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
                 </td>
                 <td
                   class="border-t-0 align-middle border-l-0 border-r-0 text-xs p-4 text-left"
                 >
-                  <app-table-dropdown></app-table-dropdown>
+                  <app-table-dropdown (edit)="handleEdit($event, tool)"
+                  (delete)="handleDelete($event, tool)"></app-table-dropdown>
                 </td>
               </tr>
-
-             
             </tbody>
+            
           </table>
         </div>
       </div>
-      
     </div>
   </div>
+  
   

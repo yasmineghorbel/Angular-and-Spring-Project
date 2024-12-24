@@ -10,6 +10,11 @@
                 Publications
               </h3>
             </div>
+            <button (click)="addNew()"
+            class="bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+            type="button">
+                Add publication
+          </button>
           </div>
         </div>
         <div class="block w-full overflow-x-auto">
@@ -59,55 +64,51 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let pub of pubs">
                 <th
-                  class="border-t-0  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+                  class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                 >
-                  
-                  <span
-                    class="ml-3 font-bold text-blueGray-600"
-                  >
-                    Argon 
+                  <span class="ml-3 font-bold text-blueGray-600">
+                    {{ pub.id }}
                   </span>
                 </th>
                 <td
                   class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                 >
-                  $2,500 USD
+                  {{ pub.title }}
                 </td>
                 <td
                   class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                 >
-                  <i class="fas fa-circle text-orange-500 mr-2"></i> pending
-                </td>
-                
-                <td
-                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                >
-                  <div class="flex">
-                    
-                  </div>
+                  <i class="fas fa-circle text-orange-500 mr-2"></i> {{ pub.type }}
                 </td>
                 <td
                   class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                 >
-                  Yasmine Ghorbel
+                {{ pub.date  | date:'yyyy-MM-dd' }}
                 </td>
                 <td
                   class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                 >
-                View
-                <button (click)="open()"> <i class="fa-solid fa-arrow-up-right-from-square "></i></button>
+                  {{ pub.member }}
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  View
+                  <button (click)="open()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
                 </td>
                 <td
                   class="border-t-0 align-middle border-l-0 border-r-0 text-xs p-4 text-left"
                 >
-                  <app-table-dropdown></app-table-dropdown>
+                  <app-table-dropdown (edit)="handleEdit($event, pub)"
+                  (delete)="handleDelete($event, pub)"></app-table-dropdown>
                 </td>
               </tr>
-
-             
             </tbody>
+            
           </table>
         </div>
       </div>
